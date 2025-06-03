@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Mistério da Mansão Blackwood</title>
+    <!-- Inclui o Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter para todo o corpo do documento */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Fundo escuro para atmosfera de mistério */
+            color: #e2e8f0; /* Cor de texto clara */
+        }
+        /* Estilos personalizados para o corpo do jogo */
+        .game-container {
+            background-color: #2d3748; /* Fundo do container mais claro que o body */
+            border-radius: 1rem; /* Cantos arredondados */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+            padding: 2.5rem; /* Preenchimento interno */
+            max-width: 900px; /* Largura máxima para melhor leitura */
+            margin: 2rem auto; /* Centraliza o container na página */
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* Espaçamento entre os elementos */
+        }
+        /* Estilos para os títulos */
+        h1 {
+            font-size: 2.5rem; /* Tamanho da fonte grande */
+            font-weight: bold; /* Negrito */
+            color: #f7fafc; /* Cor de título mais clara */
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            font-size: 1.75rem; /* Tamanho da fonte médio */
+            font-weight: bold;
+            color: #cbd5e0; /* Cor de subtítulo */
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        /* Estilos para parágrafos */
+        p {
+            line-height: 1.6; /* Espaçamento entre linhas */
+            margin-bottom: 1rem;
+        }
+        /* Estilos para listas */
+        ul {
+            list-style-type: disc; /* Marcadores de lista */
+            margin-left: 1.25rem; /* Recuo da lista */
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        /* Estilos para botões */
+        .btn {
+            background-color: #4299e1; /* Cor de fundo do botão (azul) */
+            color: white; /* Cor do texto do botão */
+            padding: 0.75rem 1.5rem; /* Preenchimento do botão */
+            border-radius: 0.75rem; /* Cantos arredondados */
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+            cursor: pointer;
+            border: none; /* Remove a borda padrão do botão */
+            display: inline-block; /* Permite centralizar ou alinhar */
+        }
+        .btn:hover {
+            background-color: #3182ce; /* Cor de fundo mais escura ao passar o mouse */
+        }
+        .btn-danger {
+            background-color: #e53e3e; /* Cor de fundo do botão (vermelho) */
+        }
+        .btn-danger:hover {
+            background-color: #c53030; /* Cor de fundo mais escura ao passar o mouse */
+        }
+        /* Estilos para responsividade */
+        @media (max-width: 768px) {
+            .game-container {
+                margin: 1rem; /* Margem menor em telas pequenas */
+                padding: 1.5rem; /* Preenchimento menor */
+            }
+            h1 {
+                font-size: 2rem; /* Tamanho da fonte menor para títulos em telas pequenas */
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <!-- Título principal do jogo -->
+        <h1>O Mistério da Mansão Blackwood</h1>
+
+        <!-- Seção de introdução ao cenário -->
+        <p>Bem-vindos, detetives, à sombria e enigmática Mansão Blackwood. O ano é 1920 e a tranquilidade desta imponente residência foi brutalmente interrompida. Na manhã de uma tempestuosa segunda-feira, o corpo de <strong>Lord Alistair Blackwood</strong>, o patriarca da família, foi encontrado sem vida em seu estudo. Um crime hediondo ocorreu, e agora cabe a vocês desvendar a verdade por trás deste mistério.</p>
+        <p>Lord Alistair foi assassinado com um objeto contundente, e a cena do crime sugere uma luta desesperada. A polícia local está perplexa, e as pistas são escassas. Há muitos segredos nas paredes desta mansão e ainda mais entre seus habitantes.</p>
+
+        <h2>Objetivo do Jogo</h2>
+        <p>Sua missão é clara: analisar meticulosamente todas as evidências, examinar os depoimentos dos suspeitos, conectar os pontos e, finalmente, identificar:</p>
+        <ul>
+            <li><strong>O Assassino:</strong> Quem cometeu este crime terrível?</li>
+            <li><strong>A Arma do Crime:</strong> Qual objeto foi utilizado para ceifar a vida de Lord Alistair?</li>
+            <li><strong>O Motivo:</strong> Qual a razão por trás de tamanha brutalidade?</li>
+        </ul>
+
+        <h2>Como Jogar</h2>
+        <p>Para desvendar este mistério, vocês terão acesso a uma série de documentos e pistas. Reúnam-se em grupo, discutam as evidências e construam suas teorias. O jogo é dividido em:</p>
+        <ul>
+            <li><strong>Arquivos do Caso:</strong> Contêm a introdução ao crime, o relatório da cena do crime e as fichas de depoimentos dos suspeitos.</li>
+            <li><strong>Pistas Adicionais:</strong> Documentos e evidências físicas que vocês "encontrarão" ao longo da investigação.</li>
+            <li><strong>A Solução:</strong> Um arquivo separado que só deve ser aberto quando o grupo tiver chegado a um consenso sobre o assassino, a arma e o motivo.</li>
+        </ul>
+
+        <div class="text-center mt-6">
+            <button id="startButton" class="btn">Iniciar Investigação</button>
+        </div>
+
+        <div id="caseFilesSection" class="hidden mt-8 p-4 bg-gray-700 rounded-lg">
+            <h2>Arquivos do Caso</h2>
+            <p>Clique nos links abaixo para acessar os documentos:</p>
+            <ul class="list-none ml-0">
+                <li><a href="https://drive.google.com/file/d/1R-s_VC81L32Su-lVosng8OqsH469ghQF/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">1. Introdução ao Caso: O Assassinato de Lord Alistair Blackwood.pdf</a></li>
+                <li><a href="https://drive.google.com/file/d/1Nftso_wniLKs2yVqyB0Zjrx2o7lpdSjd/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">2. Relatório Preliminar da Cena do Crime.pdf</a></li>
+                <li><a href="https://drive.google.com/file/d/1rBj889Q0Syn_ryeeFJV8nt9UIo4mC0sY/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">3. Depoimento: Lady Eleanor Blackwood.pdf</a></li>
+                <li><a href="https://drive.google.com/file/d/1FN8F326HxSvcy_p-4-IH1bpleErOqHsY/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">4. Depoimento: Dr. Caldwell.pdf</a></li>
+                <li><a href="https://drive.google.com/file/d/1-QkueYYc9nSVFFdZX_nsY3bWCDNbXfeM/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">5. Depoimento: Sra. Higgins, a Governanta.pdf</a></li>
+                <li><a href="https://drive.google.com/file/d/1jtjBtK--v8S1mRc9PcNgLQQ52og0WZim/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">6. Depoimento: John, o Jardineiro.pdf</a></li>
+                <!-- Adicione mais links para depoimentos de outros suspeitos aqui -->
+            </ul>
+
+            <h2>Pistas Adicionais</h2>
+            <p>Estas pistas foram encontradas na mansão e podem ser cruciais:</p>
+            <ul class="list-none ml-0">
+                <li><a href="https://drive.google.com/file/d/1IjexiiX0LO79a73tQHUBKCluhzOPmGh6/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">1. Carta Anônima.pdf</a></li>
+                <li><a href="https://drive.google.com/file/d/1gfNyYTpZJ3__WJwSrmno2ODS4D6fhkFY/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">2. Página de Diário Pessoal.pdf</a></li>
+                <li><a href="https://drive.google.com/file/d/1BCXq9-dClz10z6zJjMWKF1v4OTEUfGv0/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">3. Relatório Forense Preliminar.pdf</a></li>
+                <li><a href="https://drive.google.com/file/d/1tR053bdPSNli-aVT7fQ-XA86adHeISM3/view?usp=drive_link" target="_blank" class="text-blue-300 hover:text-blue-500 underline">4. Item Esquecido.pdf</a></li>
+                <!-- Adicione mais links para pistas adicionais aqui -->
+            </ul>
+
+            <h2 class="text-red-400">A Solução</h2>
+            <p class="text-red-300 font-bold">ATENÇÃO: Este arquivo contém a solução completa do mistério. NÃO O ABRA até que seu grupo tenha chegado a uma conclusão final sobre o assassino, a arma e o motivo.</p>
+            <div class="text-center">
+                <a href="https://drive.google.com/file/d/1THfToqZ7Cy5dR60LyO-JnRZyMcXe81v3/view?usp=drive_lin" target="_blank" class="btn btn-danger">Abrir a Solução (ÚLTIMO RECURSO!)</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Adiciona um listener para o botão "Iniciar Investigação"
+        document.getElementById('startButton').addEventListener('click', function() {
+            // Mostra a seção de arquivos do caso
+            document.getElementById('caseFilesSection').classList.remove('hidden');
+            // Opcional: Esconde o botão de iniciar após clicar
+            this.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
